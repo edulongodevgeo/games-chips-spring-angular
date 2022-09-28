@@ -1,6 +1,6 @@
 package com.edu.gamesandchips.domain.enums;
 
-//Pensar nas regras...
+//REGRAS.
 public enum Prioridade {
 	
 	BAIXA(0, "BAIXA"), MEDIA(1, "MEDIA"), ALTA(2, "ALTA");
