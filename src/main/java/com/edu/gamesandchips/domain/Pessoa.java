@@ -1,23 +1,49 @@
 package com.edu.gamesandchips.domain;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import javax.persistence.CollectionTable;
+import javax.persistence.Column;
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 import com.edu.gamesandchips.domain.enums.Perfil;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 //PODERIA utilizar o LOMBOK, mas por didática do estudo mantive sem.
 
 //Construção da nossa classe-mãe (SUPER), abstrata...
-public abstract class Pessoa {
+@Entity
+public abstract class Pessoa implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY) // Geração automática de ID
 	protected Integer id;
 	protected String nome;
+	
+	@Column(unique = true)
 	protected String cpf;
-	protected String email;
+	@Column(unique = true)
+	protected String email;	
 	protected String senha;
+	
+	@ElementCollection(fetch=FetchType.EAGER) //Informa que essa é uma coleção que quando der um GET para buscar usuário, essa lista de PERFIS virá junto com o usuário
+	@CollectionTable(name="PERFIS") // Cria então no DB uma tabela com este nome
 	protected Set<Integer> perfis = new HashSet<>(); //Lista de perfis do tipo SET, ela tmb não deixa duplicar valores iguais.
+	
+	@JsonFormat(pattern = "dd/MM/yyyy") // Padroniza o formato da Data
 	protected LocalDate dataCriacao = LocalDate.now(); //Pega a hora da criação, etc.
 	
 	public Pessoa() {
