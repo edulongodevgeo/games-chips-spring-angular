@@ -6,6 +6,9 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
 import com.edu.gamesandchips.domain.Tecnico;
 import com.edu.gamesandchips.domain.enums.Perfil;
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -15,9 +18,13 @@ public class TecnicoDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	protected Integer id;
+	@NotBlank @NotNull(message = "O campo NOME é obrigatório!")
 	protected String nome;
+	@NotBlank @NotNull(message = "O campo CPF é obrigatório!")
 	protected String cpf;
+	@NotBlank @NotNull(message = "O campo E-MAIL é obrigatório!")
 	protected String email;
+	@NotBlank @NotNull(message = "O campo SENHA é obrigatório!")
 	protected String senha;
 	protected Set<Integer> perfis = new HashSet<>(); // Lista de perfis do tipo SET, ela tmb não deixa duplicar valores
 	
