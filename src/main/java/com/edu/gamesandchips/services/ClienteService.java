@@ -5,60 +5,59 @@ import java.util.Optional;
 
 import javax.validation.Valid;
 
-import org.apache.catalina.startup.ClassLoaderFactory.Repository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.edu.gamesandchips.domain.Cliente;
 import com.edu.gamesandchips.domain.Pessoa;
-import com.edu.gamesandchips.domain.Tecnico;
-import com.edu.gamesandchips.domain.DTOs.TecnicoDTO;
+import com.edu.gamesandchips.domain.DTOs.ClienteDTO;
+import com.edu.gamesandchips.repositories.ClienteRepository;
 import com.edu.gamesandchips.repositories.PessoaRepository;
-import com.edu.gamesandchips.repositories.TecnicoRepository;
 import com.edu.gamesandchips.services.exceptions.DataIntegrityViolationException;
 import com.edu.gamesandchips.services.exceptions.ObjectNotFoundException;
 
 @Service
-public class TecnicoService {
+public class ClienteService {
 
 	@Autowired
-	private TecnicoRepository tecnicoRepository;
+	private ClienteRepository tecnicoRepository;
 	@Autowired
 	private PessoaRepository pessoaRepository;
 	
-	public Tecnico findById(Integer id) {
-		Optional<Tecnico> obj = tecnicoRepository.findById(id);
+	public Cliente findById(Integer id) {
+		Optional<Cliente> obj = tecnicoRepository.findById(id);
 		return obj.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado! ID: " + id));
 	}
 
-	public List<Tecnico> findAll() {
+	public List<Cliente> findAll() {
 		return tecnicoRepository.findAll();
 	}
 
-	public Tecnico create(TecnicoDTO objDTO) {
+	public Cliente create(ClienteDTO objDTO) {
 		objDTO.setId(null); //Para segurar que o id irá nulo, pois tem um "automatizador" já no construtor...
 		validaPorCpfEEmail(objDTO);
-		Tecnico newObj = new Tecnico(objDTO);
+		Cliente newObj = new Cliente(objDTO);
 		return tecnicoRepository.save(newObj);
 	}
 	
-	public Tecnico update(Integer id, @Valid TecnicoDTO objDTO) {
+	public Cliente update(Integer id, @Valid ClienteDTO objDTO) {
 		objDTO.setId(id);
-		Tecnico oldObj = findById(id);
+		Cliente oldObj = findById(id);
 		validaPorCpfEEmail(objDTO);
-		oldObj = new Tecnico(objDTO);
+		oldObj = new Cliente(objDTO);
 		return tecnicoRepository.save(oldObj);
 	}
 	
 	public void delete(Integer id) {
-		Tecnico obj = findById(id);
+		Cliente obj = findById(id);
 		if(obj.getChamados().size() > 0) {
-			throw new DataIntegrityViolationException("Técnico possui ordens de serviços, logo não pode ser deletado!");
+			throw new DataIntegrityViolationException("Cliente possui ordens de serviços, logo não pode ser deletado!");
 		} else {
 			tecnicoRepository.deleteById(id);
 		}
 	}
 
-	private void validaPorCpfEEmail(TecnicoDTO objDTO) {
+	private void validaPorCpfEEmail(ClienteDTO objDTO) {
 		
 		Optional<Pessoa> obj = pessoaRepository.findByCpf(objDTO.getCpf());
 		if(obj.isPresent() && obj.get().getId() != objDTO.getId()) {

@@ -27,13 +27,13 @@ public class DBService {
 	private ChamadoRepository chamadoRepository;
 	
 	public void instanciaDB() {
-		Tecnico tec1 = new Tecnico(null, "Fulano de tal", "12345678900", "fulano@email.com", "123"); // Criou uma pessoa tecnico
+		Tecnico tec1 = new Tecnico(null, "Fulano de tal", "573.543.860-30", "fulano@email.com", "123"); // Criou uma pessoa tecnico
 		tec1.addPerfil(Perfil.ADMIN); // Setou ela realmente como tecnico
 		
-		Tecnico tec2 = new Tecnico(null, "Edu", "12345678911", "edu@email.com", "123"); // Criou uma pessoa tecnico
+		Tecnico tec2 = new Tecnico(null, "Edu", "600.433.720-07", "edu@email.com", "123"); // Criou uma pessoa tecnico
 		tec2.addPerfil(Perfil.ADMIN); // Setou ela realmente como tecnico
 		
-		Cliente cli1 = new Cliente(null, "Ciclano", "98765432100", "ciclano@email.com", "123"); // Criou uma pessoa cliente
+		Cliente cli1 = new Cliente(null, "Ciclano", "429.385.850-47", "ciclano@email.com", "123"); // Criou uma pessoa cliente
 		//cli1.addPerfil(Perfil.CLIENTE);
 		
 		Chamado cham1 = new Chamado(null, Prioridade.MEDIA, Status.ANDAMENTO, "Chamado 01", "Primeiro chamado", tec1, cli1); // Cria um chamado
