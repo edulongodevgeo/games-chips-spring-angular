@@ -37,12 +37,16 @@ public class DBService {
 		//cli1.addPerfil(Perfil.CLIENTE);
 		
 		Chamado cham1 = new Chamado(null, Prioridade.MEDIA, Status.ANDAMENTO, "Chamado 01", "Primeiro chamado", tec1, cli1); // Cria um chamado
-	
+		Chamado cham2 = new Chamado(null, Prioridade.ALTA, Status.ANDAMENTO, "Chamado 02", "Segundo chamado", tec1, cli1); // Cria outro chamado
+
+		
+		
 		//Salvando as instâncias que foram criadas acima...
 		tecnicoRepository.saveAll(Arrays.asList(tec1));
 		tecnicoRepository.saveAll(Arrays.asList(tec2));
 		clienteRepository.saveAll(Arrays.asList(cli1));
 		chamadoRepository.saveAll(Arrays.asList(cham1));
+		chamadoRepository.saveAll(Arrays.asList(cham2));
 	}
 
 }
