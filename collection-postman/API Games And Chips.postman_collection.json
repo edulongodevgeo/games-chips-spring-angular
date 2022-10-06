@@ -1,0 +1,429 @@
+{
+	"info": {
+		"_postman_id": "83f0c12c-87f3-46af-bbab-b1b587654c40",
+		"name": "API Games And Chips",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21267184"
+	},
+	"item": [
+		{
+			"name": "Tecnicos",
+			"item": [
+				{
+					"name": "Tecnicos - FindAll",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/tecnicos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tecnicos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tecnicos - FindById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/tecnicos/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tecnicos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tecnicos - Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"nome\": \"kratos\",\r\n        \"cpf\": \"502.061.680-04\",\r\n        \"email\": \"kratos@email.com\",\r\n        \"senha\": \"123\",\r\n        \"perfis\": [0]\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/tecnicos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tecnicos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tecnicos - Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"nome\": \"kratos\",\r\n        \"cpf\": \"502.061.680-04\",\r\n        \"email\": \"kratos@email.com\",\r\n        \"senha\": \"123\",\r\n        \"perfis\": [1]\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/tecnicos/5",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tecnicos",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tecnicos - DeleteById",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/tecnicos/5",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tecnicos",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Clientes",
+			"item": [
+				{
+					"name": "Clientes - FindAll",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/clientes",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Clientes - FindById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/clientes/4",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Clientes - Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"nome\": \"kratos\",\r\n        \"cpf\": \"502.061.680-04\",\r\n        \"email\": \"kratos@email.com\",\r\n        \"senha\": \"123\",\r\n        \"perfis\": [0]\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/clientes",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Clientes = Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"nome\": \"kratos\",\r\n        \"cpf\": \"502.061.680-04\",\r\n        \"email\": \"kratos@email.com\",\r\n        \"senha\": \"123\",\r\n        \"perfis\": [1]\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/clientes/5",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Clientes - DeleteById",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/clientes/5",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Chamados",
+			"item": [
+				{
+					"name": "Chamados - FindById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/chamados/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"chamados",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Chamados - FindAll",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/chamados",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"chamados"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Chamados - Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"prioridade\": 1,\r\n    \"status\": 1,\r\n    \"titulo\": \"Chamado X\",\r\n    \"observacoes\": \"X chamado\",\r\n    \"tecnico\": 1,\r\n    \"cliente\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/chamados",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"chamados"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Chamados - Put",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"prioridade\": 1,\r\n        \"status\": 1,\r\n        \"titulo\": \"Chamado 01\",\r\n        \"observacoes\": \"TESTANDO PUT\",\r\n        \"tecnico\": 2,\r\n        \"cliente\": 3\r\n\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/chamados/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"chamados",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
